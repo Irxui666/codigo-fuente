@@ -1,0 +1,302 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100vh;
+	overflow: hidden;
+	background: #ffffff;
+}
+
+.contenedor-login {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+}
+
+
+
+.zona-imagen {
+	width: 52%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.imagen-consultorio {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+
+
+.boton-regresar {
+	position: absolute;
+	top: 14px;
+	left: 18px;
+	z-index: 10;
+
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	background: #ffffff;
+	color: #111111;
+	text-decoration: none;
+
+	padding: 6px 13px 6px 7px;
+	border-radius: 20px;
+
+	font-size: 12px;
+	font-weight: 700;
+
+	box-shadow: 0 2px 7px rgba(0, 0, 0, 0.25);
+}
+
+.circulo-flecha {
+	width: 23px;
+	height: 23px;
+	border-radius: 50%;
+
+	background: #000000;
+	color: #ffffff;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 15px;
+	font-weight: 700;
+}
+
+
+
+.separador-azul {
+	width: 8px;
+	height: 100vh;
+	background: #009fe3;
+}
+
+
+
+.zona-formulario {
+	width: 48%;
+	height: 100vh;
+	background: #caf8ff;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contenido-formulario {
+	width: 75%;
+	max-width: 540px;
+	transform: translateY(5px);
+}
+
+
+
+.logo-karelys {
+	width: 390px;
+	max-width: 100%;
+	height: auto;
+	display: block;
+
+	margin-bottom: 28px;
+	object-fit: contain;
+}
+
+
+
+.contenido-formulario h1 {
+	font-size: 38px;
+	font-weight: 900;
+	color: #000000;
+	line-height: 1;
+	margin-bottom: 6px;
+}
+
+.texto-ayuda {
+	font-size: 13px;
+	font-weight: 700;
+	color: #000000;
+	margin-bottom: 18px;
+}
+
+
+
+/* MENSAJE CUANDO SE CIERRA SESIÓN CORRECTAMENTE */
+.mensaje-exito {
+	width: 100%;
+	margin-bottom: 12px;
+	padding: 10px 12px;
+
+	background: #e2ffe7;
+	color: #137b2f;
+
+	border: 1px solid #7edb91;
+	border-radius: 6px;
+
+	font-size: 12px;
+	font-weight: 800;
+	text-align: center;
+}
+
+
+
+.formulario-login {
+	width: 100%;
+}
+
+.formulario-login input {
+	width: 100%;
+	height: 31px;
+
+	border: 1px solid #9d9d9d;
+	border-radius: 5px;
+	background: #ffffff;
+
+	padding: 0 11px;
+	margin-bottom: 12px;
+
+	font-size: 11px;
+	color: #333333;
+	outline: none;
+
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+.formulario-login input::placeholder {
+	color: #8c8c8c;
+}
+
+.formulario-login input:focus {
+	border-color: #009fe3;
+}
+
+
+
+.caja-contrasena {
+	width: 100%;
+	position: relative;
+}
+
+.caja-contrasena input {
+	padding-right: 38px;
+}
+
+.boton-ojo {
+	position: absolute;
+	right: 8px;
+	top: 5px;
+
+	width: 22px;
+	height: 22px;
+
+	border: none;
+	background: transparent;
+	color: #666666;
+
+	cursor: pointer;
+	font-size: 14px;
+}
+
+
+
+.mensaje-error {
+	color: #c40000;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1.2;
+
+	margin-top: -4px;
+	margin-bottom: 10px;
+}
+
+
+
+.boton-ingresar {
+	width: 100%;
+	height: 34px;
+
+	background: #0098d5;
+	color: #ffffff;
+
+	border: none;
+	border-radius: 6px;
+
+	font-size: 12px;
+	font-weight: 800;
+
+	cursor: pointer;
+
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.30);
+}
+
+.boton-ingresar:hover {
+	background: #0088c2;
+}
+
+.boton-ingresar:active {
+	transform: scale(0.99);
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+	body {
+		overflow-y: auto;
+	}
+
+	.contenedor-login {
+		flex-direction: column;
+		height: auto;
+		min-height: 100vh;
+	}
+
+	.zona-imagen {
+		width: 100%;
+		height: 45vh;
+	}
+
+	.separador-azul {
+		width: 100%;
+		height: 7px;
+	}
+
+	.zona-formulario {
+		width: 100%;
+		min-height: 55vh;
+		padding: 35px 20px;
+	}
+
+	.contenido-formulario {
+		width: 90%;
+		max-width: 520px;
+		transform: none;
+	}
+
+	.logo-karelys {
+		width: 340px;
+	}
+
+	.contenido-formulario h1 {
+		font-size: 32px;
+	}
+
+	.texto-ayuda {
+		font-size: 12px;
+	}
+
+	.mensaje-error,
+	.mensaje-exito {
+		font-size: 12px;
+	}
+}

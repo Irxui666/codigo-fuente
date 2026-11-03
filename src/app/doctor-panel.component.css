@@ -1,0 +1,240 @@
+:host { display: contents; }
+
+.k-doctor {
+  color: #183951;
+  font-size: 16px;
+}
+
+.k-doctor .k-module-header {
+  margin-bottom: 24px;
+}
+
+.doctor-identidad {
+  margin-top: 15px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #e4f4fb;
+  border: 1px solid #c7e3f0;
+  border-radius: 9px;
+  padding: 9px 14px;
+  color: #315f79;
+  font-size: 14px;
+}
+
+.doctor-identidad strong { color: #064e78; }
+
+/* Pestañas como acciones independientes */
+.k-doctor .doctor-tabs {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 26px;
+  border: 1px solid #cfe5f1;
+  background: #eaf5fb;
+  border-radius: 14px;
+}
+
+.k-doctor .doctor-tabs .k-tab {
+  min-width: 170px;
+  min-height: 49px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #125a80;
+  background: #fff;
+  border: 1px solid #c1ddea;
+  border-radius: 9px;
+  box-shadow: 0 2px 4px rgba(17, 81, 115, .04);
+}
+
+.k-doctor .doctor-tabs .k-tab:hover { background: #dbf0fa; }
+.k-doctor .doctor-tabs .k-tab.active {
+  color: white;
+  background: #006aa6;
+  border-color: #006aa6;
+  box-shadow: 0 4px 10px rgba(0, 77, 133, .2);
+}
+
+.k-doctor .doctor-tabs .k-tab:focus-visible,
+.k-doctor button:focus-visible {
+  outline: 3px solid #e8ac3f;
+  outline-offset: 3px;
+}
+
+/* Márgenes y jerarquía de secciones */
+.k-doctor .k-panel {
+  margin-bottom: 24px;
+  padding: clamp(22px, 2vw, 30px);
+  border-radius: 15px;
+  border: 1px solid #d5e7f0;
+  box-shadow: 0 8px 24px rgba(18, 77, 108, .08);
+}
+
+.k-doctor .k-section-heading {
+  margin-bottom: 23px;
+  padding-bottom: 18px;
+}
+
+.k-doctor .k-section-heading h2 {
+  margin-bottom: 7px;
+  font-size: clamp(21px, 1.7vw, 26px);
+  color: #074e79;
+}
+
+.k-doctor .k-section-heading p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #536e81;
+}
+
+.k-doctor .k-info,
+.k-doctor .k-error,
+.k-doctor .k-success {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Botones más grandes y espaciados */
+.k-doctor .k-button {
+  min-height: 45px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 18px;
+}
+
+.k-doctor .k-actions { gap: 12px; margin-top: 20px; }
+.k-doctor .k-toolbar { gap: 14px; margin: 0 0 23px; }
+.k-doctor .k-search { max-width: 520px; }
+.k-doctor .k-search input { min-height: 46px; font-size: 15px; }
+.k-doctor .k-count { font-size: 14px; }
+
+.k-doctor .k-table-wrap {
+  border: 1px solid #d5e5ef;
+  border-radius: 11px;
+  overflow-x: auto;
+}
+
+.k-doctor .k-table { min-width: 740px; font-size: 14px; }
+.k-doctor .k-table th {
+  padding: 15px 16px;
+  font-weight: 800;
+  font-size: 13px;
+}
+.k-doctor .k-table td {
+  padding: 16px;
+  line-height: 1.45;
+}
+.k-doctor .k-table td.k-empty {
+  padding: 34px 18px;
+  color: #5b7788;
+  text-align: center;
+}
+.k-doctor .k-table .k-button-small {
+  min-height: 37px;
+  padding: 8px 13px;
+  white-space: nowrap;
+}
+
+/* Formularios clínicos y de horarios */
+.k-doctor .k-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.k-doctor .k-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 750;
+  color: #2a5570;
+  min-width: 0;
+}
+
+.k-doctor .k-field input,
+.k-doctor .k-field select,
+.k-doctor .k-field textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 47px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid #bbd5e5;
+  border-radius: 9px;
+  color: #243e51;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.k-doctor .k-field textarea { resize: vertical; line-height: 1.5; }
+.k-doctor .k-field :disabled { background: #eef4f7; color: #67818e; cursor: not-allowed; }
+.k-doctor .k-field :focus-visible { outline: 2px solid #86cbef; outline-offset: 1px; }
+
+.k-doctor .doctor-clinica-form { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.k-doctor .doctor-receta-form { grid-template-columns: minmax(0,2fr) minmax(180px,1fr); }
+.k-doctor .doctor-medicamento-form { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.k-doctor .doctor-consulta-select { grid-template-columns: minmax(0,2fr) minmax(200px,1fr); }
+
+.k-doctor .k-field-wide { grid-column: auto; }
+.k-doctor .doctor-label { display: block; font-size: 14px; font-weight: 750; color: #2a5570; margin-bottom: 8px; }
+.k-doctor .doctor-estado-consulta strong {
+  min-height: 47px;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border: 1px solid #c8e3ef;
+  border-radius: 9px;
+  background: #f1f9fc;
+  color: #085c87;
+  font-size: 15px;
+}
+
+.k-doctor .doctor-subtitulo {
+  margin: 25px 0 20px !important;
+  padding-top: 22px;
+  border-top: 1px solid #e0edf3;
+  font-size: 19px;
+  color: #074e79;
+}
+
+.k-doctor .doctor-help {
+  margin: 17px 0 0;
+  color: #587184;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.k-doctor .doctor-cerrar {
+  background: #126d54;
+  border-color: #126d54;
+}
+.k-doctor .doctor-cerrar:hover:not(:disabled) { background: #0c5e47; }
+
+.k-doctor .doctor-advertencia { margin-top: 22px; margin-bottom: 0; }
+
+@media (max-width: 1180px) {
+  .k-doctor .k-form { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .k-doctor .doctor-medicamento-form { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .k-doctor .doctor-tabs .k-tab { flex: 1 1 180px; min-width: 0; }
+}
+
+@media (max-width: 730px) {
+  .k-doctor .doctor-tabs { gap: 8px; }
+  .k-doctor .doctor-tabs .k-tab { flex: 1 1 100%; font-size: 14px; }
+  .k-doctor .k-panel { padding: 19px 16px; }
+  .k-doctor .k-form,
+  .k-doctor .doctor-clinica-form,
+  .k-doctor .doctor-receta-form,
+  .k-doctor .doctor-medicamento-form,
+  .k-doctor .doctor-consulta-select { grid-template-columns: minmax(0,1fr); gap: 17px; }
+  .k-doctor .k-toolbar { align-items: stretch; }
+  .k-doctor .k-toolbar .k-button { width: 100%; }
+  .k-doctor .k-actions .k-button { flex: 1 1 220px; }
+}

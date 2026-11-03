@@ -1,0 +1,774 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: #caf8ff;
+	color: #000000;
+	overflow-x: hidden;
+}
+
+.pagina-home {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+}
+
+.barra-lateral {
+	width: 250px;
+	height: 100vh;
+	background: #ffffff;
+
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 20;
+
+	overflow: hidden;
+}
+
+.zona-logo {
+	height: 112px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.logo-empresa {
+	width: 205px;
+	height: auto;
+	object-fit: contain;
+}
+
+.titulo-panel {
+	padding: 16px 12px 10px;
+
+	font-size: 13px;
+	font-weight: 800;
+	color: #006aa6;
+	text-align: center;
+
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.menu-lateral {
+	padding: 10px 8px;
+}
+
+.opcion-menu {
+	width: 100%;
+	height: 29px;
+	margin-bottom: 8px;
+	padding: 0 10px;
+
+	display: flex;
+	align-items: center;
+	gap: 9px;
+
+	text-decoration: none;
+	color: #000000;
+	background: #ffffff;
+
+	border: 1px solid #006aa6;
+	border-radius: 6px;
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+
+	cursor: pointer;
+}
+
+.opcion-menu img {
+	width: 14px;
+	height: 14px;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+.opcion-menu span:nth-child(2) {
+	flex: 1;
+	text-align: left;
+}
+
+.opcion-menu.activa {
+	background: #006aa6;
+	color: #ffffff;
+}
+
+.opcion-menu.activa img {
+	filter: brightness(0) invert(1);
+}
+
+.opcion-menu:hover {
+	background: #0088c2;
+	color: #ffffff;
+}
+
+.opcion-menu:hover img {
+	filter: brightness(0) invert(1);
+}
+
+.subopciones-pacientes {
+	margin-left: 22px;
+	margin-top: 0;
+}
+
+.opcion-submenu {
+	width: 100%;
+	height: 29px;
+	margin-bottom: 8px;
+	padding: 0 10px;
+
+	display: flex;
+	align-items: center;
+	gap: 9px;
+
+	text-decoration: none;
+	color: #000000;
+	background: #ffffff;
+
+	border: 1px solid #006aa6;
+	border-radius: 6px;
+
+	font-size: 10px;
+	font-weight: 700;
+
+	cursor: pointer;
+}
+
+.opcion-submenu img {
+	width: 13px;
+	height: 13px;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+.opcion-submenu span:nth-child(2) {
+	flex: 1;
+	text-align: left;
+}
+
+.opcion-submenu.activa {
+	background: #000000;
+	color: #ffffff;
+	border-color: #000000;
+}
+
+.opcion-submenu.activa img {
+	filter: brightness(0) invert(1);
+}
+
+.opcion-submenu:hover {
+	background: #0088c2;
+	color: #ffffff;
+}
+
+.opcion-submenu:hover img {
+	filter: brightness(0) invert(1);
+}
+
+.contenido-principal {
+	flex: 1;
+	min-height: 100vh;
+	margin-left: 250px;
+}
+
+.cabecera-superior {
+	height: 86px;
+	background: #006aa6;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 0 28px;
+
+	position: fixed;
+	top: 0;
+	left: 250px;
+	right: 0;
+	z-index: 15;
+}
+
+.datos-usuario {
+	display: flex;
+	align-items: center;
+	gap: 13px;
+	color: #ffffff;
+}
+
+.texto-usuario {
+	text-align: right;
+}
+
+.texto-usuario strong {
+	display: block;
+	font-size: 12px;
+	font-weight: 800;
+}
+
+.texto-usuario span {
+	display: block;
+	font-size: 10px;
+}
+
+.icono-usuario {
+	width: 35px;
+	height: 35px;
+}
+
+.zona-pacientes {
+	width: calc(100% - 70px);
+	max-width: 1050px;
+	margin: 114px auto 45px;
+}
+
+.vista-paciente {
+	display: none;
+}
+
+.vista-paciente.activa {
+	display: block;
+}
+
+.cabecera-pacientes,
+.cabecera-formulario,
+.cabecera-detalle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 24px;
+}
+
+.cabecera-pacientes h1,
+.cabecera-formulario h1,
+.cabecera-detalle h1 {
+	font-size: 31px;
+	font-weight: 900;
+	line-height: 1;
+	color: #000000;
+}
+
+.cabecera-formulario p,
+.sub-fecha {
+	font-size: 14px;
+	font-weight: 500;
+	margin-top: 7px;
+}
+
+.btn-agregar-paciente,
+.btn-buscar,
+.btn-cancelar,
+.btn-guardar,
+.btn-volver,
+.btn-admitir,
+.btn-modal-principal,
+.btn-modal-secundario {
+	min-width: 120px;
+	height: 31px;
+
+	border: none;
+	border-radius: 6px;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+
+	text-decoration: none;
+
+	font-size: 11px;
+	font-weight: 800;
+
+	cursor: pointer;
+
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.btn-agregar-paciente {
+	width: 210px;
+	min-width: 210px;
+	padding: 0 18px;
+	white-space: nowrap;
+	flex-shrink: 0;
+
+	background: #006aa6;
+	color: #ffffff;
+}
+
+.btn-agregar-paciente span {
+	flex-shrink: 0;
+}
+
+.btn-agregar-paciente:hover {
+	background: #0088c2;
+}
+
+.btn-guardar,
+.btn-admitir,
+.btn-modal-principal {
+	background: #006aa6;
+	color: #ffffff;
+}
+
+.btn-buscar {
+	width: 92px;
+	min-width: 92px;
+	background: #006aa6;
+	color: #ffffff;
+}
+
+.btn-cancelar,
+.btn-volver,
+.btn-modal-secundario {
+	background: #eeeeee;
+	color: #000000;
+}
+
+.btn-guardar:hover,
+.btn-admitir:hover,
+.btn-buscar:hover,
+.btn-modal-principal:hover {
+	background: #0088c2;
+}
+
+.btn-cancelar:hover,
+.btn-volver:hover,
+.btn-modal-secundario:hover {
+	background: #dddddd;
+}
+
+.tarjeta-pacientes,
+.tarjeta-formulario,
+.tarjeta-detalle {
+	background: #ffffff;
+	border-radius: 14px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.22);
+}
+
+.tarjeta-pacientes {
+	overflow: hidden;
+}
+
+.tarjeta-formulario,
+.tarjeta-detalle {
+	padding: 34px 38px;
+}
+
+.tarjeta-formulario h2 {
+	color: #000000;
+	font-size: 25px;
+	font-weight: 900;
+	line-height: 1;
+	margin-bottom: 24px;
+}
+
+.barra-busqueda-pacientes {
+	display: flex;
+	gap: 12px;
+	padding: 16px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.input-busqueda {
+	flex: 1;
+	height: 32px;
+	padding: 0 12px;
+
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	background: #edf4f7;
+	border-radius: 6px;
+}
+
+.input-busqueda input {
+	width: 100%;
+	border: none;
+	outline: none;
+	background: transparent;
+
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.icono-lupa {
+	color: #6d7d85;
+	font-size: 15px;
+}
+
+.tabla-pacientes {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.tabla-pacientes th {
+	padding: 12px 10px;
+
+	color: #4c5358;
+	font-size: 11px;
+	font-weight: 900;
+	letter-spacing: 0.3px;
+	text-align: center;
+
+	border-bottom: 1px solid #dddddd;
+}
+
+.tabla-pacientes td {
+	padding: 13px 10px;
+
+	font-size: 11px;
+	font-weight: 500;
+	text-align: center;
+	color: #3b3f42;
+
+	border-bottom: 1px solid #eeeeee;
+}
+
+.tabla-pacientes td strong {
+	color: #000000;
+	font-weight: 900;
+}
+
+.fila-vacia {
+	text-align: center !important;
+	color: #999999 !important;
+	padding: 40px !important;
+	font-weight: 800 !important;
+}
+
+.acciones-fila {
+	display: flex;
+	justify-content: center;
+	gap: 14px;
+}
+
+.boton-accion {
+	width: 18px;
+	height: 18px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.boton-accion img {
+	max-width: 16px;
+	max-height: 16px;
+	object-fit: contain;
+}
+
+.pie-tabla {
+	padding: 12px 16px;
+
+	color: #555555;
+	font-size: 12px;
+	font-weight: 600;
+
+	border-top: 1px solid #eeeeee;
+}
+
+.grilla-formulario {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 22px;
+}
+
+.campo-formulario {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+.campo-formulario label {
+	font-size: 12px;
+	font-weight: 800;
+	color: #333333;
+}
+
+.campo-formulario input {
+	height: 32px;
+	padding: 0 12px;
+
+	border: 1px solid #bfbfbf;
+	border-radius: 6px;
+
+	font-size: 12px;
+	font-weight: 600;
+	outline: none;
+}
+
+.campo-formulario input:disabled {
+	background: #f5f5f5;
+	color: #999999;
+}
+
+.botones-formulario {
+	margin-top: 24px;
+
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+}
+
+.cabecera-card-detalle {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.avatar-detalle {
+	width: 58px;
+	height: 58px;
+
+	border-radius: 50%;
+	background: #006aa6;
+	color: #ffffff;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 24px;
+	font-weight: 900;
+}
+
+.nombre-detalle {
+	flex: 1;
+	font-size: 22px;
+	font-weight: 900;
+}
+
+.btn-editar-inline {
+	width: 34px;
+	height: 34px;
+
+	border-radius: 50%;
+	background: #006aa6;
+	color: #ffffff;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	text-decoration: none;
+	font-size: 17px;
+	font-weight: 900;
+}
+
+.btn-editar-inline:hover {
+	background: #0088c2;
+}
+
+.tarjeta-detalle hr {
+	margin: 24px 0;
+	border: none;
+	border-top: 1px solid #dddddd;
+}
+
+.seccion-detalle h2 {
+	margin-bottom: 18px;
+
+	color: #000000;
+	font-size: 15px;
+	font-weight: 900;
+}
+
+.grilla-detalle {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 22px;
+}
+
+.dato-detalle {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.dato-detalle span {
+	color: #777777;
+	font-size: 11px;
+	font-weight: 900;
+}
+
+.dato-detalle strong {
+	font-size: 14px;
+}
+
+.notificacion-exito {
+	margin-bottom: 16px;
+	padding: 12px 16px;
+
+	border-radius: 8px;
+	background: #e2ffe7;
+	color: #137b2f;
+
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.info-paciente-admitir {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+}
+
+.avatar-paciente {
+	width: 28px;
+	height: 28px;
+
+	border-radius: 50%;
+	background: #006aa6;
+	color: #ffffff;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 13px;
+	font-weight: 900;
+}
+
+.badge-especialidad,
+.chip-hora {
+	padding: 5px 10px;
+
+	border-radius: 14px;
+	background: #e9f7ff;
+
+	font-size: 11px;
+	font-weight: 700;
+	color: #006aa6;
+}
+
+.fondo-modal {
+	position: fixed;
+	inset: 0;
+
+	background: rgba(0, 0, 0, 0.42);
+
+	display: none;
+	align-items: center;
+	justify-content: center;
+
+	z-index: 50;
+}
+
+.fondo-modal.visible {
+	display: flex;
+}
+
+.modal-pacientes {
+	width: 430px;
+	padding: 38px 36px;
+
+	background: #ffffff;
+	border-radius: 14px;
+
+	text-align: center;
+	box-shadow: 0 7px 14px rgba(0, 0, 0, 0.30);
+}
+
+.modal-pacientes h2 {
+	margin-bottom: 24px;
+
+	font-size: 24px;
+	font-weight: 900;
+}
+
+.botones-modal {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+@media screen and (max-width: 900px) {
+
+	.pagina-home {
+		flex-direction: column;
+	}
+
+	.barra-lateral {
+		position: relative;
+		width: 100%;
+		height: auto;
+		overflow: visible;
+	}
+
+	.zona-logo {
+		height: 90px;
+	}
+
+	.logo-empresa {
+		width: 190px;
+	}
+
+	.menu-lateral {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 8px;
+	}
+
+	.opcion-menu,
+	.opcion-submenu {
+		margin-bottom: 0;
+	}
+
+	.subopciones-pacientes {
+		margin-left: 0;
+		display: contents;
+	}
+
+	.contenido-principal {
+		margin-left: 0;
+	}
+
+	.cabecera-superior {
+		position: relative;
+		left: 0;
+		height: 70px;
+	}
+
+	.zona-pacientes {
+		width: 90%;
+		max-width: none;
+		margin-top: 28px;
+	}
+
+	.cabecera-pacientes,
+	.cabecera-formulario,
+	.cabecera-detalle {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 14px;
+	}
+
+	.btn-agregar-paciente {
+		width: 210px;
+		min-width: 210px;
+	}
+
+	.grilla-formulario,
+	.grilla-detalle {
+		grid-template-columns: 1fr;
+	}
+
+	.botones-formulario {
+		justify-content: flex-start;
+		flex-wrap: wrap;
+	}
+
+	.modal-pacientes {
+		width: 90%;
+	}
+}
