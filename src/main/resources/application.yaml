@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: karely-backend
+  datasource:
+    url: ${DB_URL:jdbc:oracle:thin:@//localhost:1522/FREEPDB1}
+    username: ${DB_USERNAME:KARELY_BD2}
+    password: ${DB_PASSWORD}
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      maximum-pool-size: 8
+      connection-timeout: 15000
+  mail:
+    host: ${MAIL_HOST:}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.ssl.checkserveridentity: true
+      mail.smtp.connectiontimeout: 5000
+      mail.smtp.timeout: 7000
+      mail.smtp.writetimeout: 7000
+  jackson:
+    time-zone: America/Lima
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: never
+app:
+  jwt:
+    secret: ${APP_JWT_SECRET}
+    expiration-minutes: ${APP_JWT_EXPIRATION_MINUTES:60}
+  frontend-origin: ${APP_FRONTEND_ORIGIN:http://localhost:4200}
+  bootstrap:
+    username: ${APP_BOOTSTRAP_USERNAME:}
+    email: ${APP_BOOTSTRAP_EMAIL:}
+    password: ${APP_BOOTSTRAP_PASSWORD:}
+  mail:
+    enabled: ${APP_MAIL_ENABLED:false}
+    operator-id: ${APP_MAIL_OPERATOR_ID:0}
+    from: ${APP_MAIL_FROM:}
+    poll-ms: ${APP_MAIL_POLL_MS:30000}
